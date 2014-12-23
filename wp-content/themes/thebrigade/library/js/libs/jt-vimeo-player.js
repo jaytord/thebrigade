@@ -1,6 +1,7 @@
 /*  Jason Tordsen's amazing Vimeo video player -
 *   Dependencies:[ jQuery ]
 */
+var vimeo_players = [];
 
 function VimeoPlayer(_el){
   var VimeoPlayer = {
@@ -56,3 +57,20 @@ function VimeoPlayer(_el){
 
   return VimeoPlayer;
 }
+
+jQuery( document ).ready(function($){
+  /*--------vimeo players----------------*/
+  jQuery( ".vimeo-player" ).each(function(){
+    var vp = new VimeoPlayer( jQuery(this) );
+    vimeo_players.push( vp );
+
+    vp.addEvent( "playing", function( _video ){
+      jQuery.each( vimeo_players, function( i,el ){
+        if(_video != el) el.stop();
+      });
+    });
+
+    vp.init();
+  });
+  /*--------end vimeo players-----------*/
+});

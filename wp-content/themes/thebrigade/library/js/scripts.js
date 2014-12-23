@@ -149,25 +149,7 @@ window.addEventListener('scroll', function() {
     },200);
 }, false);
 
-var vimeo_players = [];
-
 jQuery( document ).ready(function($){
   loadGravatars();
   setbodytags();
-
-  /*--------vimeo players----------------*/
-  jQuery( ".vimeo-player" ).each(function(){
-    var vp = new VimeoPlayer( jQuery(this) );
-    vimeo_players.push( vp );
-
-    vp.addEvent( "playing", function( _video ){
-      jQuery.each( vimeo_players, function( i,el ){
-        if(_video != el) el.stop();
-      });
-    });
-
-    vp.init();
-  });
-  /*--------end vimeo players-----------*/
-
 });
