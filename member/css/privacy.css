@@ -1,0 +1,28 @@
+.container{
+	padding-bottom: 50px;
+	min-height: 600px;
+}
+.row:first-child div:first-child{
+	border-bottom: 1px #DDD solid;
+	margin-bottom: 20px;
+	margin-top:20px;
+}
+
+p{
+	font-size: 13px;
+	font-weight: 200;
+}
+
+h2{
+	color: #444;
+	line-height: 48px;
+	display: inline-block;
+	margin: 0 0 14px 0;
+	padding: 0px 0px;
+}
+
+h5{
+	font-size: 16px;
+	padding: 10px 0 5px 0;
+	margin: 0;
+}

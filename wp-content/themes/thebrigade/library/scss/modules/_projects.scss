@@ -1,0 +1,220 @@
+/******************************************************************
+Site Name: Brigade
+Author: Jason Tordsen
+Stylesheet: Project List Styles
+******************************************************************/
+
+/******************************************************************
+Projects List
+******************************************************************/
+ul.projects-list{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	vertical-align:top;
+
+	li.project{
+		position: relative;
+		padding:0 4px 4px 0;
+		float: left;
+		width: 33.3333%;
+
+		@media(max-width:1029px){
+			width: 50%;
+		}
+
+		.big-play-button{
+			.big-play-button-inner{
+				background-color:rgba(0,0,0,.2);
+				margin-top:-80px;
+			}
+		}
+
+		.project-inner{
+			border-bottom:1px solid #BBB;
+			display: block;
+			position: relative;
+			height: 0;
+			width: 100%;
+			padding-bottom:120%;
+			cursor:pointer;
+
+			@media(max-width:1029px){
+				padding-bottom: 80% !important;
+			}
+
+			background-color:#EEE;
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center center;
+
+			&:visited, &:link{
+				color: #333;
+				text-decoration: none;
+			}
+
+			&:hover{
+				.project-label{
+					.project-label-inner{
+						background-position:0 -100px;
+
+						.next-arrow{
+							i{
+								background-position:0 0;
+							}
+							span{
+								color: #333;
+							}
+						}
+					}
+
+					h2,h3{
+						color: #000 !important;
+					}
+				}
+
+				.big-play-button{
+					.big-play-button-inner{
+						background-color:rgba(0,0,0,.8);
+					}
+				}
+			}
+		}
+
+		.project-label{
+			position: absolute;
+			border-top: 0px solid #FFF;
+			bottom:0;
+			width: 100%;
+			padding-top:4px;
+
+			.project-label-inner{
+				position: relative;
+				background-image:url(../images/work_label_tile.png);
+				background-size:1px 200px;
+				background-repeat:repeat-x;
+				background-position:0 0;
+				padding:10px 10px 9px 10px;
+				overflow: hidden;
+
+				@include transition(background-position .1s ease-in-out);
+
+				.next-arrow{
+					bottom:6px;
+					top:auto;
+					right:6px;
+
+					span{
+						color: #FFF;
+					}	
+
+					i{
+						background-position:0 0;
+						background-color:rgba(0,0,0,.2);
+					}
+
+					&:hover{
+						i{
+							background-position:0 0;
+							background-color:rgba(0,0,0,1);
+						}
+					}
+				}
+			}
+
+			h2,h3{
+				color: #FFF;
+			}
+			h2{
+				font-size:38px;
+				line-height:32px;
+				margin-top:0;
+			}
+			h3{
+				font-size:16px;
+				line-height:18px;
+				margin-bottom: 22px;
+			}
+		}
+
+		&:nth-child(-n+2){
+			width: 50%;
+
+			.project-inner{
+				padding-bottom:100%;
+			}
+		}
+	}
+}
+
+.single-project{
+	h4{
+		margin:80px 0 0 0;
+	}
+
+	section{
+		ul{
+			margin:0; padding:0;
+
+			li{
+				margin:0; padding:0; float:left;
+			}
+		}
+	}
+
+	.whatwedid{
+		margin: 40px 0 90px 0;
+
+		ul.category-list{
+			margin:8px 0 0 1px;
+
+			li{
+				padding:0 10px 0 0;
+
+				h2{
+					margin:0;
+					font-size: 28px;
+					line-height: 28px;
+
+					a{
+						text-decoration: underline !important;
+
+						&:after{
+							content:",";
+						}
+					}
+				}
+
+				&:last-child{
+					h2{
+						a{
+							&:after{
+								content:""
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.credits{
+		margin: 0 0 80px 0;
+
+		ul.credits-list{
+			li{
+				padding:0 20px 0 0;
+				margin:0 20px 14px 0;
+				border-right:1px solid #CCC;
+
+				h3{
+					font-size: 16px;
+				}
+				p{
+					margin:0;
+				}
+				&:first-child{
+				}
+			}
+		}
+	}
+}

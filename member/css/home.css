@@ -1,0 +1,24 @@
+.hero-unit{
+	padding: 30px;
+	background: none;
+	margin: 0;
+	min-height: 600px;
+}
+.hero-unit h1{
+	color: #EEE;
+	line-height: 68px;
+	background: #222;
+	display: inline-block;
+	margin: 0 0 4px 20px;
+	padding: 0px 12px;
+}
+
+.hero-unit p{
+	margin: 20px;
+	line-height: 23px;
+	font-size: 16px;
+}
+
+.hero-unit h2 {
+	margin:20px;
+}

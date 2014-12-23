@@ -1,0 +1,184 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+
+
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
+*/
+
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+
+
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Holtwood+One+SC);
+
+// font stacks
+$sans-serif:        "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$poster:            "Holtwood One SC", "Georgia", Cambria, Times New Roman, Times, serif;
+
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
+*/
+
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+body,html,p{
+  font-family: $serif;
+  font-size: 16px;
+  line-height: 27px;
+  font-style: italic;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  padding:0;
+  margin:0;
+}
+
+p {
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+      word-break: break-word;
+     word-break: break-word;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+  // sets a minimum number of characters before and after the break
+  -webkit-hyphenate-before: 2;
+   -webkit-hyphenate-after: 3;
+           hyphenate-lines: 3;
+  // enabling fancy ligatures when available
+  -webkit-font-feature-settings: "liga", "dlig";
+   -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+       -o-font-feature-settings: "liga", "dlig";
+          font-feature-settings: "liga", "dlig";
+
+  margin:12px 0 12px 0;
+  padding:0 0 0 2px;
+}
+
+p.no-ital-block{
+  font-style: normal;
+  color:#888;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-style: normal;
+  font-family: $sans-serif;
+  text-rendering: optimizelegibility;
+  font-weight: 400;
+  color:#444;
+  margin:0;
+  padding:0;
+}
+
+h1, .h1 {
+  font-size: 55px;
+  line-height: 55px;
+}
+
+/******************************************************************
+Header
+******************************************************************/
+.article-header h1{
+  font-size:64px;
+  line-height:70px;
+
+  span{
+    color: #FFF;
+    background: #222;
+    padding:14px 20px;
+    display: inline-block;
+    margin: 0 8px 4px 0;
+  }
+}
+
+h2, .h2 {
+  font-size: 42px;
+  line-height: 42px;
+  font-weight:300;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  margin-left: -1px;
+}
+
+h3, .h3 {
+  font-size:18px;
+  line-height: 18px;
+  font-family: $poster;
+  letter-spacing:0;
+  padding-left:1px;
+  text-transform: uppercase;
+  margin-bottom:4px;
+}
+
+h4, .h4 {
+  font-family: $serif;
+  font-style: italic;
+  color: #000;
+  text-align: center;
+  padding:10px 0;
+  margin:40px 0 20px 0;
+  font-size:26px;
+  letter-spacing: -2px;
+}
+
+h4 .label{
+  background: #FFF;
+  background-image:url(../images/bg_tile.gif);
+  padding:0 20px;
+}
+
+h4 hr{
+  margin-top: -13px;
+}
+
+h5, .h5 {
+}

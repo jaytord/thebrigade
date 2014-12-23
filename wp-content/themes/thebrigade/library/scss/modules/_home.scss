@@ -1,0 +1,51 @@
+/******************************************************************
+Site Name: Brigade
+Author: Jason Tordsen
+Stylesheet: Home Styles
+******************************************************************/
+
+
+
+
+/******************************************************************
+Reel
+******************************************************************/
+
+
+/******************************************************************
+Featured Projects List
+******************************************************************/
+ul.featured-projects-list{
+	li.featured-project{
+		
+		a.featured-project-label{
+			width: 100%;
+			display: block;
+			position:relative;
+
+			h2,h3,.next-arrow{
+				margin:0;
+				display: inline-block;
+			}
+			h2{
+				margin-right: 4px;
+			}
+			p{
+				margin:2px 0 10px -2px;
+			}
+		}
+
+		a.featured-project-label:hover{
+			.next-arrow{
+				i{
+					background-position:0 0;
+					background-color:#222;
+				}
+			}
+		}
+
+		margin-bottom: 40px;
+		padding-bottom: 4px;
+		border-bottom:1px solid #000;
+	}
+}

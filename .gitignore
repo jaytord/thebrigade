@@ -1,0 +1,6 @@
+wp-config.php
+member/application/config/database.php
+member/application/config/staging/database.php
+member/application/config/local/database.php
+src
+*.htaccess

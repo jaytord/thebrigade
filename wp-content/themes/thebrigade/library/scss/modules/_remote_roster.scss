@@ -1,0 +1,52 @@
+/******************************************************************
+FORMS
+******************************************************************/
+body.page-remote-roster{
+	h2{
+		margin-left: -1px;
+	}
+
+	form{
+		padding: 10px 0 20px 0;
+
+		fieldset{
+			border:none;
+			margin:0 0 10px 0;
+			padding:0 20px 0 0;
+			display: inline-block;
+			width: 50%;
+			label{
+				h3{
+					font-size:14px;
+					margin:0 0 4px -1px;
+				}
+			}
+			input{
+				width: 100%;
+				max-width: inherit;
+				font-family: $sans-serif;
+				font-size:20px;
+				font-weight: 200;
+			}
+			input[type="text"],input[type="password"]{
+				line-height: 60px;
+				border: 1px solid #CCC;
+				border-radius:0;
+				background:#fff;
+				height: auto;
+				margin:0;
+			}
+			input[type="submit"]{
+				width: 50%;
+				background:#111;
+				border:none;
+				line-height: 40px;
+				color: #FFF;
+				font-family:$sans-serif;
+				text-transform: uppercase;
+				font-size:15px;
+				margin-top: 4px;
+			}
+		}
+	}
+}

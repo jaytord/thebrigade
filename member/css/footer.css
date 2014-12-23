@@ -1,0 +1,71 @@
+.main-footer{
+	padding: 10px 20px 10px 20px;
+	margin:0 0 0 0;
+	background: #222;
+	/*-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .9);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .9);*/
+    
+}
+.main-footer .lockup{
+	padding-bottom: 0;
+}
+.main-footer h3{
+	color: #666;
+}
+.main-footer h5{
+	width: 90%;
+	color: #666;
+	padding: 0 0 0 0;
+	margin:0 0 4px 0;
+	line-height: 16px;
+}
+.main-footer p{
+	color: #555;
+	
+	-webkit-user-select:all;  /* Chrome all / Safari all */
+	-moz-user-select: all;     /* Firefox all */
+	-ms-user-select: all;      /* IE 10+ */
+
+	/* No support for these yet, use at own risk */
+	-o-user-select: all;
+	user-select: all;  
+}
+.main-footer img{
+	margin: 0px 0 0px -8px;
+}
+.main-footer .container{
+	min-height: inherit;
+	background: none;
+	padding-bottom: 20px;
+}
+.main-footer .row{
+	padding-top:20px;
+	padding-left: 0;
+	background: none;
+	padding-bottom: 10px;
+	margin-left: 0;
+}
+.main-footer .row .span3{
+	margin-right: 40px;
+	margin-left: 0;
+	padding-bottom: 20px;
+}
+.main-footer .row:last-child{
+	padding-top:0px;
+	padding-bottom: 0;
+}
+.main-footer #links{
+	background: none;
+	text-align: center;
+}
+.main-footer #links a{
+	color: #555;
+	font-size: 13px;
+	border-left: 1px solid #444;
+	border-right: 1px solid #444;
+	padding: 0 8px;
+}
+
+.main-footer #links a:hover{
+	color: #666;
+}
