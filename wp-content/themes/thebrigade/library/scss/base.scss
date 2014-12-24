@@ -103,7 +103,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width:980px;
+	max-width:$desktop;
 	width: 96%;
 	margin: 0 auto;
 }
@@ -674,16 +674,7 @@ FOOTER STYLES
 			display: block;
 		}
 	}
-	ul.contacts-list{
-		text-align: left;
-		margin-top: 0;
-		vertical-align: top;
-		width: 100%;
-
-		li{
-			vertical-align: top;
-		}
-	}
+	
 	ul.footer-nav {
 		li {
 			a{

@@ -18,8 +18,12 @@ ul.projects-list{
 		float: left;
 		width: 33.3333%;
 
-		@media(max-width:1029px){
+		@media(max-width:$desktop){
 			width: 50%;
+		}
+
+		@media(max-width:$tablet-small){
+			width: 100%;
 		}
 
 		.big-play-button{
@@ -38,7 +42,7 @@ ul.projects-list{
 			padding-bottom:120%;
 			cursor:pointer;
 
-			@media(max-width:1029px){
+			@media(max-width:$desktop){
 				padding-bottom: 80% !important;
 			}
 
@@ -127,20 +131,49 @@ ul.projects-list{
 			h2{
 				font-size:38px;
 				line-height:32px;
-				margin-top:0;
+				margin:0 0 8px 0;
 			}
 			h3{
 				font-size:16px;
 				line-height:18px;
-				margin-bottom: 22px;
 			}
 		}
 
 		&:nth-child(-n+2){
-			width: 50%;
+			@media(min-width:$desktop){
+				width: 50%;
 
+				.project-inner{
+					padding-bottom:100%;
+				}
+			}
+		}
+
+		@media(max-width:$tablet-large) and (min-width:$tablet-small), (max-width:$mobile-small){
 			.project-inner{
-				padding-bottom:100%;
+				padding-bottom:100% !important;
+			}
+
+			.project-label{
+				.project-label-inner{
+					background:#FFF;
+				}
+
+				h2{
+					color: #000;
+					font-size: 28px;
+					line-height:26px;
+				}
+				h3{
+					color: #000;
+					font-size:14px;
+					line-height:16px;
+				}
+				.next-arrow{
+					span{
+						display: none;
+					}
+				}
 			}
 		}
 	}
