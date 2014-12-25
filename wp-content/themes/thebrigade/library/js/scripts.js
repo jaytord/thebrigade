@@ -152,4 +152,14 @@ window.addEventListener('scroll', function() {
 jQuery( document ).ready(function($){
   loadGravatars();
   setbodytags();
+
+  $("body").find("[data-transition-delay]").each(function(){
+    var _t = $(this);
+
+    setTimeout(function(){
+      _t.removeClass("hidden");
+    }, _t.attr("data-transition-delay")*150 );
+
+    console.log( "transition in: ", $(this).attr("data-transition-delay") );
+  });
 });

@@ -11,14 +11,14 @@
 <?php get_header(); ?>
 
 <div id="content">
-	<div id="inner-content" class="wrap cf">
-		<div id="main" class="m-all cf" role="main">
+	<div id="inner-content" class="wrap">
+		<div id="main" role="main">
 			<div class="vimeo-overlay"></div>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-				<header class="article-header">
+			<article id="post-<?php the_ID(); ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<header class="article-header hidden" data-transition-delay="0">
 					<?php 
 						$pieces = explode("~", get_the_title() );
 					?>
@@ -27,13 +27,10 @@
 						--><span><?php echo $piece; ?></span><!--
 						<?php endforeach; ?>
 					--></h1>
+					<?php the_content(); ?>
 				</header>
 
-				<section class="entry-content cf" itemprop="articleBody">
-				<?php the_content(); ?>
-				</section>
-
-				<section class="entry-content cf" itemprop="reel">
+				<section class="entry-content hidden" itemprop="reel" data-transition-delay="1">
 					<?php
 						$fields = get_field_objects();
 						$vimeo_id_field = $fields["reel_vimeo_id"];
@@ -49,12 +46,14 @@
 					</div>
 				</section><!-- end article section -->
 
-				<h4><span class="label"><?php echo $featured_work["label"]; ?></span><br>
-				<hr></h4>
+				<section class="hidden" data-transition-delay="2">
+					<h4><span class="label"><?php echo $featured_work["label"]; ?></span><br>
+					<hr></h4>
+				</section>
 
-				<section class="entry-content cf" itemprop="featured_work">
+				<section class="entry-content" itemprop="featured_work">
 					<ul class="featured-projects-list">
-						<?php foreach ($featured_work["value"] as $key => $project_object):?>
+						<?php $i=2; foreach ($featured_work["value"] as $key => $project_object):?>
 						<?php 
 							$project = $project_object[""]; 
 							$post_fields = get_field_objects($project->ID); 
@@ -63,7 +62,7 @@
 							$post_client = $post_fields["client"];
 							$post_short_description = $project_object["short_description"];
 						?><!--
-						--><li class="featured-project">
+						--><li class="featured-project hidden" data-transition-delay="<?php echo $i; ?>">
 							<a class="featured-project-label" href="<?php echo get_permalink($project->ID); ?>">
 								<h2><?php echo $project->post_title; ?></h2>
 								<h3><?php echo $post_client["value"]; ?></h3>
@@ -75,7 +74,7 @@
 								<div class="poster" style="background-image:url(<?php echo $post_thumb; ?>)"><div class="big-play-button"><div class="big-play-button-inner"><i class="arrow"></i></div></div></div>
 							</div>
 						</li>
-						<?php endforeach; ?><!--
+						<?php $i++; endforeach; ?><!--
 					--></ul>
 				</section>
 
@@ -86,7 +85,7 @@
 
 			<?php endwhile; else : ?>
 
-			<article id="post-not-found" class="hentry cf">
+			<article id="post-not-found" class="hentry">
 					<header class="article-header">
 						<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 				</header>

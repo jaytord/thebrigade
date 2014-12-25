@@ -11,21 +11,21 @@
 <?php get_header(); ?>
 
 <div id="content">
-	<div id="inner-content" class="wrap cf">
-		<div id="main" class="m-all cf" role="main">
+	<div id="inner-content" class="wrap">
+		<div id="main" role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-				<header class="article-header">
+			<article id="post-<?php the_ID(); ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<header class="article-header hidden" data-transition-delay="0">
 					<h1 class="page-title"><?php the_title(); ?></h1>
 				</header>
 
-				<section class="entry-content cf" itemprop="articleBody">
+				<section class="entry-content hidden" itemprop="articleBody" data-transition-delay="0">
 				<?php the_content(); ?>
 				</section>
 
-				<section class="entry-content cf" itemprop="specialists">
+				<section class="entry-content" itemprop="specialists">
 					<?php
 						$args = array(
 							'posts_per_page'   => 50,
@@ -47,7 +47,7 @@
 						$projects = get_posts( $args );
 					?> 
 					<ul class="projects-list specialists-list">
-						<?php foreach($projects as $pk=>$project) : ?>
+						<?php $i=1; foreach($projects as $pk=>$project) : ?>
 						<?php 
 							$pid 		= $project->ID;
 							$image_id 	= get_post_thumbnail_id( $pid );
@@ -59,7 +59,7 @@
 							$specialty = get_field_object('specialty',$pid);
 							$bio = get_field_object('bio',$pid);
 						?><!--
-						--><li class="project">
+						--><li class="project hidden" data-transition-delay="<?php echo $i; ?>">
 							<div class="project-inner" style="background-image:url(<?php echo $src; ?>)">
 								<div class="big-play-button">
 									<div class="big-play-button-inner"><i class="arrow"></i></div>
@@ -73,7 +73,7 @@
 								</div>
 							</div>
 						</li><!--
-						--><?php endforeach; ?>
+						--><?php $i++; endforeach; ?>
 					</ul>
 				</section>
 
@@ -84,7 +84,7 @@
 
 			<?php endwhile; else : ?>
 
-			<article id="post-not-found" class="hentry cf">
+			<article id="post-not-found" class="hentry">
 					<header class="article-header">
 						<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 				</header>

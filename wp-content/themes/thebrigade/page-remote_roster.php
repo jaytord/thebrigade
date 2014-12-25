@@ -11,13 +11,13 @@
 <?php get_header(); ?>
 
 <div id="content">
-	<div id="inner-content" class="wrap cf">
-		<div id="main" class="m-all cf" role="main">
+	<div id="inner-content" class="wrap">
+		<div id="main" role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-				<header class="article-header">
+			<article id="post-<?php the_ID(); ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<header class="article-header hidden" data-transition-delay="0">
 					<?php 
 						$pieces = explode("~", get_the_title() );
 					?>
@@ -28,11 +28,11 @@
 					--></h1>
 				</header>
 
-				<section class="entry-content cf" itemprop="articleBody">
+				<section class="entry-content hidden" itemprop="articleBody" data-transition-delay="1">
 					<?php the_content(); ?>
 				</section>
 
-				<section class="entry-content cf" itemprop="articleBody">
+				<section class="entry-content hidden" data-transition-delay="2">
 					<h2>Member Login</h2>
 					<form id="member_login_form">
 						<fieldset><label for="email"><h3>Email</h3></label><input type="text" name="email"/></fieldset><!--
@@ -41,7 +41,7 @@
 					</form>
 				</section>
 
-				<section class="entry-content cf" itemprop="articleBody">
+				<section class="entry-content hidden" data-transition-delay="3">
 					<h2>Not a menber yet? Join The Roster!</h2>
 					<p>Join Brigade's international roster of top-shelf designers, animators, programmers, and other digital experts today.</p>
 					<p>The Brigade is a creative production company integrating live-action and post production. The studio is internationally known for creating original work by assembling custom creative teams from across the globe. Whether you're a remotist abroad or working from our own New York studio hub, not only do we find freelancers work, but we also help them build networks, portfolios, and industry contacts.</p>
@@ -57,7 +57,7 @@
 
 			<?php endwhile; else : ?>
 
-			<article id="post-not-found" class="hentry cf">
+			<article id="post-not-found" class="hentry">
 					<header class="article-header">
 						<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 				</header>

@@ -11,8 +11,8 @@
 <?php get_header(); ?>
 
 <div id="content">
-	<div id="inner-content" class="wrap cf">
-		<div id="main" class="m-all cf" role="main">
+	<div id="inner-content" class="wrap">
+		<div id="main" role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -20,21 +20,21 @@
 				$googlemap = get_field('google_map'); 
 				$contacts = get_field('contacts');
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-				<header class="article-header">
+			<article id="post-<?php the_ID(); ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<header class="article-header hidden" data-transition-delay="0">
 					<h1 class="page-title"><?php the_title(); ?></h1>
 				</header>
 
-				<section class="entry-content cf" itemprop="articleBody">
+				<section class="entry-content hidden" itemprop="articleBody" data-transition-delay="0">
 				<p><?php echo $googlemap["address"]; ?></p>
 				</section>
 
-				<section class="entry-content cf" itemprop="specialists">
+				<section class="entry-content hidden" data-transition-delay="1">
 					<div id="map"></div>
 				</section>
 
 				<ul class="horizontal-list contacts-list">
-					<?php foreach ($contacts as $contact) : ?>
+					<?php $i=2; foreach ($contacts as $contact) : ?>
 					<?php 
 						$post = $contact["contact"];
 						$post_fields = get_field_objects( $post->ID ); 
@@ -42,12 +42,12 @@
 						$email = $post_fields["email"];
 						$phone = $post_fields["phone"];
 					?>
-					<li class="contact">
+					<li class="contact hidden" data-transition-delay="<?php echo $i; ?>">
 					<h2><?php echo $post->post_title; ?></h2>
 					<h3><?php echo $name["value"]; ?></h3>
 					<p><a href="mailto:<?php echo $email["value"]; ?>"><?php echo $email["value"]; ?></a>, <?php echo $phone["value"]; ?></p>
 					</li>
-					<?php endforeach; ?>
+					<?php $i++; endforeach; ?>
 				</ul>
 			</article>
 
@@ -63,6 +63,7 @@
 	                var mapOptions = {
 	                    // How zoomed in you want the map to start at (always required)
 	                    zoom: 15,
+	                    backgroundColor:"#336699",
 	                    zoomControl: false,
 						scaleControl: false,
 						scrollwheel: false,
@@ -170,7 +171,7 @@
 
 			<?php endwhile; else : ?>
 
-			<article id="post-not-found" class="hentry cf">
+			<article id="post-not-found" class="hentry">
 					<header class="article-header">
 						<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 				</header>
